@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = require("./app");
 //----------------------------------->
 const Faculty = require('./models/Faculty')
+const Placement = require('./models/Placement')
 const AdminBro = require('admin-bro')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 const AdminBroExpress = require('@admin-bro/express')
@@ -36,7 +37,7 @@ const server = app.listen(port, () => {
 AdminBro.registerAdapter(AdminBroMongoose)
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const AdminBroOptions = {
-  resources: [User, Faculty],
+  resources: [User, Faculty,Placement],
 }
 const adminBro = new AdminBro(AdminBroOptions)
 const router = AdminBroExpress.buildRouter(adminBro)
