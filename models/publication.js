@@ -3,28 +3,46 @@ const mongoose = require("mongoose");
 
 //Schema---------------------------->
 const PublicationSchema = new mongoose.Schema(
-    {
-        Publication: { type: Object },
-        show: { type: Boolean, default: true },
-        order:{
-          type: Number,
+  {
+      
+        "Title": {
+          type: String
+        },
+        department: {
+          type: String,
+          enum: ['bt', 'ch', 'cy', 'ce', 'cse', 'ee', 'ece', 'hm', 'ipe', 'it', 'ice', 'ma', 'me', 'ph', 'tt', 'cf']
       },
-      new:{
-        type: Boolean,
+        "Authors": {
+          type: String
+        },
+        "Source": {
+          type: String
+        },
+        "Status": {
+          type: String
+        },
+        "Year": {
+          type: String
+        },
+    show: { type: Boolean, default: true },
+    order: {
+      type: Number,
     },
-        sourceOfInfo: {
-            type: Object,
-            default: {
-              name: null,
-              email: null,
-              designation: null,
-              department: null,
-            }
-          },
+    new: {
+      type: Boolean,
     },
-    {
-        timestamps: true,
-    }
+    sourceOfInfo: {
+      type: Object,
+      default: {
+        name: null,
+        email: null,
+        designation: null,
+        department: null,
+      }
+    },
+},{
+  timestamps: true,
+}
 );
 
 //Model---------------------------->

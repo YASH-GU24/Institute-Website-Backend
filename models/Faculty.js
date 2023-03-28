@@ -1,4 +1,4 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 const passport = require('passport');
 
 const Schema = new mongoose.Schema({
@@ -26,11 +26,11 @@ const Schema = new mongoose.Schema({
         type: Object,
         default: {}
     },
-    education_qualification:{
+    education_qualification: {
         type: Array,
         default: []
     },
-    address:{
+    address: {
         type: Object,
         default: {}
     },
@@ -280,20 +280,20 @@ const Schema = new mongoose.Schema({
         default: []
     },
     personal_link: {
-        type:{
+        type:
             String
-        }
+
     },
     journal: {
         type: [
             {
-                "Journal": {
+                "Aurthor + Title": {
                     type: String
                 },
-                "Jouranal Title": {
+                "Name": {
                     type: String
                 },
-                "Jouranal Link": {
+                "Link": {
                     type: String
                 },
                 "Year": {
